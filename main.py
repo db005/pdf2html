@@ -38,7 +38,7 @@ def pdf_from_url_to_txt(data):
     return str
 
 
-@app.route('/release/<path:pdfpath>')
+@app.route('/<path:pdfpath>')
 def hello(pdfpath):
     print(pdfpath,flush=True)
     data = requests.get(pdfpath).content
