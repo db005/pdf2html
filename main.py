@@ -40,6 +40,8 @@ def pdf_from_url_to_txt(data):
 
 @app.route('/<path:pdfpath>')
 def hello(pdfpath):
+    pdfpath = pdfpath.split(':/',1)
+    pdfpath = "http://"+pdfpath[1]
     print(pdfpath,flush=True)
     data = requests.get(pdfpath).content
     html = pdf_from_url_to_txt(data)
