@@ -40,7 +40,7 @@ def pdf_from_url_to_txt(data):
 
 
 @app.route('/')
-def index(pdfpath):
+def index():
     html = "把pdf文件的地址加在这个地址后面。"
     return html
 
