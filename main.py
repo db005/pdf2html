@@ -38,6 +38,11 @@ def pdf_from_url_to_txt(data):
     return str
 
 
+@app.route('/')
+def hello(pdfpath):
+    html = "把pdf文件的地址加在这个地址后面。"
+    return html
+
 @app.route('/<path:pdfpath>')
 def hello(pdfpath):
     pdfpath = pdfpath.split(':/',1)
@@ -48,4 +53,4 @@ def hello(pdfpath):
     return html
 
 if __name__=='__main__':
-    app.run(host='0.0.0.0',debug=True,port='9000')
+    app.run(host='0.0.0.0',debug=True,port='80')
